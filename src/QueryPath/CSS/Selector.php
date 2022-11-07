@@ -58,6 +58,7 @@ class Selector implements EventHandler, \IteratorAggregate, \Countable {
     $this->selectors[$this->groupIndex][] = $this->currSelector;
   }
 
+  #[\ReturnTypeWillChange]
   public function getIterator() {
     return new \ArrayIterator($this->selectors);
   }
@@ -73,6 +74,7 @@ class Selector implements EventHandler, \IteratorAggregate, \Countable {
     return $this->selectors;
   }
 
+  #[\ReturnTypeWillChange]
   public function count() {
     return count($this->selectors);
   }
